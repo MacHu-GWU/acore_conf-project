@@ -5,6 +5,13 @@ from acore_conf import api
 
 def test():
     _ = api
+    _ = api.read_config_file
+    _ = api.read_config_content
+    _ = api.update_config_file
+    _ = api.update_config_content
+    _ = api.write_config_content
+    _ = api.write_config_file
+    _ = api.apply_changes
 
 
 if __name__ == "__main__":
