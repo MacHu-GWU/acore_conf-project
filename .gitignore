@@ -2,6 +2,8 @@
 acore_conf.egg-info/
 tmp/
 
+authserver.conf.out
+worldserver.conf.out
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
