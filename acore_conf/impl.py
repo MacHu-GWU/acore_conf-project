@@ -12,16 +12,6 @@ from atomicwrites import atomic_write
 from commentedconfigparser import CommentedConfigParser
 
 
-def read_config_file(path) -> CommentedConfigParser:
-    """
-    Given a config file path, return the loaded config object.
-    """
-    config = CommentedConfigParser()
-    config.optionxform = lambda option: option
-    config.read_string(Path(path).read_text())
-    return config
-
-
 def read_config_content(content: str) -> CommentedConfigParser:
     """
     Given the content of a config file, return the loaded config object.
@@ -30,6 +20,13 @@ def read_config_content(content: str) -> CommentedConfigParser:
     config.optionxform = lambda option: option
     config.read_string(content)
     return config
+
+
+def read_config_file(path) -> CommentedConfigParser:
+    """
+    Given a config file path, return the loaded config object.
+    """
+    return read_config_content(Path(path).read_text())
 
 
 def _update_config(
@@ -61,19 +58,6 @@ def _update_config(
             config[section_name][key] = str(value)
 
 
-def update_config_file(
-    path,
-    data: T.Dict[str, T.Dict[str, str]],
-) -> CommentedConfigParser:
-    """
-    Given a config file path, load the config object from it,
-    apply changes, and return the config object.
-    """
-    config = read_config_file(path)
-    _update_config(config, data)
-    return config
-
-
 def update_config_content(
     content: str,
     data: T.Dict[str, T.Dict[str, str]],
@@ -85,6 +69,17 @@ def update_config_content(
     config = read_config_content(content)
     _update_config(config, data)
     return config
+
+
+def update_config_file(
+    path,
+    data: T.Dict[str, T.Dict[str, str]],
+) -> CommentedConfigParser:
+    """
+    Given a config file path, load the config object from it,
+    apply changes, and return the config object.
+    """
+    return update_config_content(Path(path).read_text(), data)
 
 
 def write_config_content(config: CommentedConfigParser) -> str:
@@ -100,9 +95,10 @@ def write_config_file(config: CommentedConfigParser, path) -> Path:
     """
     Write the config object to a file.
     """
+    content = write_config_content(config)
     p = Path(path)
     with atomic_write(f"{p}", overwrite=True) as f:
-        config.write(f)
+        f.write(content)
     return p
 
 
