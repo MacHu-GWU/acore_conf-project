@@ -1,12 +1,12 @@
 
-.. image:: https://readthedocs.org/projects/acore-conf/badge/?version=latest
+.. .. image:: https://readthedocs.org/projects/acore-conf/badge/?version=latest
     :target: https://acore-conf.readthedocs.io/en/latest/
     :alt: Documentation Status
 
 .. image:: https://github.com/MacHu-GWU/acore_conf-project/workflows/CI/badge.svg
     :target: https://github.com/MacHu-GWU/acore_conf-project/actions?query=workflow:CI
 
-.. image:: https://codecov.io/gh/MacHu-GWU/acore_conf-project/branch/main/graph/badge.svg
+.. .. image:: https://codecov.io/gh/MacHu-GWU/acore_conf-project/branch/main/graph/badge.svg
     :target: https://codecov.io/gh/MacHu-GWU/acore_conf-project
 
 .. image:: https://img.shields.io/pypi/v/acore-conf.svg
@@ -26,10 +26,10 @@
 
 ------
 
-.. image:: https://img.shields.io/badge/Link-Document-blue.svg
+.. .. image:: https://img.shields.io/badge/Link-Document-blue.svg
     :target: https://acore-conf.readthedocs.io/en/latest/
 
-.. image:: https://img.shields.io/badge/Link-API-blue.svg
+.. .. image:: https://img.shields.io/badge/Link-API-blue.svg
     :target: https://acore-conf.readthedocs.io/en/latest/py-modindex.html
 
 .. image:: https://img.shields.io/badge/Link-Install-blue.svg
@@ -50,7 +50,17 @@
 
 Welcome to ``acore_conf`` Documentation
 ==============================================================================
-Documentation for ``acore_conf``.
+**背景**
+
+`AzerothCore <https://www.azerothcore.org/>`_ (acore) 是一个开源的魔兽世界模拟器, 其代码质量以及文档是目前 (2023 年) 我看来所有的开源魔兽世界模拟器中最好的. 它有一个 ``.conf`` 配置文件格式用于定义服务器的各种配置. 这个格式不是 acore 独有的, 而是所有的魔兽世界模拟器, 包括各个不同的资料片几乎都用的这个格式.
+
+- `How configuration files are composed <https://www.azerothcore.org/wiki/how-to-work-with-conf-files>`_
+- `authserver.conf <https://github.com/azerothcore/azerothcore-wotlk/blob/master/src/server/apps/authserver/authserver.conf.dist>`_
+- `worldserver.conf <https://github.com/azerothcore/azerothcore-wotlk/blob/master/src/server/apps/worldserver/worldserver.conf.dist>`_
+
+**关于本项目**
+
+本项目是一个简单的 Python 工具, 用于管理, 修改 ``.conf`` 文件. 使得开发者可以用业内比较通用的 JSON 格式对 ``.conf`` 进行修改.
 
 
 .. _install:
