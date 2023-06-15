@@ -6,7 +6,7 @@
 .. image:: https://github.com/MacHu-GWU/acore_conf-project/workflows/CI/badge.svg
     :target: https://github.com/MacHu-GWU/acore_conf-project/actions?query=workflow:CI
 
-.. .. image:: https://codecov.io/gh/MacHu-GWU/acore_conf-project/branch/main/graph/badge.svg
+.. image:: https://codecov.io/gh/MacHu-GWU/acore_conf-project/branch/main/graph/badge.svg
     :target: https://codecov.io/gh/MacHu-GWU/acore_conf-project
 
 .. image:: https://img.shields.io/pypi/v/acore-conf.svg
