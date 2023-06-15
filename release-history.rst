@@ -18,3 +18,11 @@ x.y.z (Backlog)
 0.1.1 (2023-06-14)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 - First release
+- Add the following public APIs:
+    _ ``acore_conf.api.read_config_file``
+    _ ``acore_conf.api.read_config_content``
+    _ ``acore_conf.api.update_config_file``
+    _ ``acore_conf.api.update_config_content``
+    _ ``acore_conf.api.write_config_content``
+    _ ``acore_conf.api.write_config_file``
+    _ ``acore_conf.api.apply_changes``
