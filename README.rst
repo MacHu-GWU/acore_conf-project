@@ -62,6 +62,18 @@ Welcome to ``acore_conf`` Documentation
 
 本项目是一个简单的 Python 工具, 用于管理, 修改 ``.conf`` 文件. 使得开发者可以用业内比较通用的 JSON 格式对 ``.conf`` 进行修改.
 
+**用法**
+
+.. code-block:: python
+
+    from acore_conf.api import apply_changes
+
+    apply_changes(
+        "/path/to/authserver.conf.dist",
+        "/path/to/authserver.conf",
+        data={"worldserver": {"DataDir": "/home/azeroth-server/data"}},
+    )
+
 
 .. _install:
 
