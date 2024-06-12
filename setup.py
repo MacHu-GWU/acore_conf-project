@@ -120,15 +120,17 @@ if __name__ == "__main__":
         "Operating System :: MacOS",
         "Operating System :: Unix",
         "Programming Language :: Python",
-        "Programming Language :: Python :: 3.7",
         "Programming Language :: Python :: 3.8",
         "Programming Language :: Python :: 3.9",
         "Programming Language :: Python :: 3.10",
+        "Programming Language :: Python :: 3.11",
+        "Programming Language :: Python :: 3.12",
         "Programming Language :: Python :: 3 :: Only",
     ]
     """
     Full list can be found at: https://pypi.python.org/pypi?%3Aaction=list_classifiers
     """
+
 
     def read_requirements_file(path):
         """
@@ -181,6 +183,7 @@ if __name__ == "__main__":
         classifiers=CLASSIFIERS,
         platforms=PLATFORMS,
         license=LICENSE,
+        python_requires=">=3.8",
         install_requires=REQUIRES,
         extras_require=EXTRA_REQUIRE,
     )
@@ -198,7 +201,7 @@ Frequent used classifiers List::
         "Development Status :: 5 - Production/Stable",
         "Development Status :: 6 - Mature",
         "Development Status :: 7 - Inactive",
-    
+
         "Intended Audience :: Customer Service",
         "Intended Audience :: Developers",
         "Intended Audience :: Education",
@@ -213,30 +216,27 @@ Frequent used classifiers List::
         "Intended Audience :: Science/Research",
         "Intended Audience :: System Administrators",
         "Intended Audience :: Telecommunications Industry",
-    
+
         "License :: OSI Approved :: MIT License",
         "License :: OSI Approved :: BSD License",
         "License :: OSI Approved :: Apache Software License",
         "License :: OSI Approved :: GNU General Public License (GPL)",
         "License :: OSI Approved :: GNU Lesser General Public License v3 (LGPLv3)",
-    
+
         "Natural Language :: English",
         "Natural Language :: Chinese (Simplified)",
-    
+
         "Operating System :: Microsoft :: Windows",
         "Operating System :: MacOS",
         "Operating System :: Unix",
-    
+
         "Programming Language :: Python",
-        "Programming Language :: Python :: 2",
-        "Programming Language :: Python :: 2.7",
-        "Programming Language :: Python :: 2 :: Only",
         "Programming Language :: Python :: 3",
-        "Programming Language :: Python :: 3.7",
         "Programming Language :: Python :: 3.8",
         "Programming Language :: Python :: 3.9",
         "Programming Language :: Python :: 3.10",
         "Programming Language :: Python :: 3.11",
+        "Programming Language :: Python :: 3.12",
         "Programming Language :: Python :: 3 :: Only",
     ]
 """
