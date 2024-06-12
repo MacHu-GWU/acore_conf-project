@@ -50,13 +50,16 @@
 
 Welcome to ``acore_conf`` Documentation
 ==============================================================================
+.. image:: https://acore-conf.readthedocs.io/en/latest/_static/acore_conf-logo.png
+    :target: https://acore-conf.readthedocs.io/en/latest/
+
 **背景**
 
 `AzerothCore <https://www.azerothcore.org/>`_ (acore) 是一个开源的魔兽世界模拟器, 其代码质量以及文档是目前 (2023 年) 我看来所有的开源魔兽世界模拟器中最好的. 它有一个 ``.conf`` 配置文件格式用于定义服务器的各种配置. 这个格式不是 acore 独有的, 而是所有的魔兽世界模拟器, 包括各个不同的资料片几乎都用的这个格式.
 
-- `How configuration files are composed <https://www.azerothcore.org/wiki/how-to-work-with-conf-files>`_
-- `authserver.conf <https://github.com/azerothcore/azerothcore-wotlk/blob/master/src/server/apps/authserver/authserver.conf.dist>`_
-- `worldserver.conf <https://github.com/azerothcore/azerothcore-wotlk/blob/master/src/server/apps/worldserver/worldserver.conf.dist>`_
+- `How configuration files are composed <https://www.azerothcore.org/wiki/how-to-work-with-conf-files>`_: AzerothCore 官方对 config file 格式的解释.
+- `authserver.conf <https://github.com/azerothcore/azerothcore-wotlk/blob/master/src/server/apps/authserver/authserver.conf.dist>`_: AzerothCore 官方 GitHub 源码中的初始 ``authserver.conf`` 文件.
+- `worldserver.conf <https://github.com/azerothcore/azerothcore-wotlk/blob/master/src/server/apps/worldserver/worldserver.conf.dist>`_: AzerothCore 官方 GitHub 源码中的初始 ``worldserver.conf`` 文件.
 
 **关于本项目**
 
@@ -73,6 +76,11 @@ Welcome to ``acore_conf`` Documentation
         "/path/to/authserver.conf",
         data={"worldserver": {"DataDir": "/home/azeroth-server/data"}},
     )
+
+**更多 API 详细文档请参考下面的链接**
+
+- `acore_conf.api.update_config_content <https://acore-conf.readthedocs.io/en/latest/acore_conf/impl.html#acore_conf.impl.update_config_content>`_
+- `acore_conf.api.apply_changes <https://acore-conf.readthedocs.io/en/latest/acore_conf/impl.html#acore_conf.impl.apply_changes>`_
 
 
 .. _install:

@@ -65,6 +65,27 @@ def update_config_content(
     """
     Given the content of a config file, load the config object from it,
     apply changes, and return the config object.
+
+    :param content: the string content of the ``*.conf`` file.
+    :param data: python dictionary, the key value pair of the changes.
+        The first key is the section name, the second key is the field name,
+        and the value is the value.
+
+    Example, let's say we want to change the ``DataDir`` field in the ``worldserver`` section
+    from "." to "/home/azeroth-server/data".
+
+    .. code-block::
+
+        # content of the worldserver.conf file
+        [worldserver]
+        DataDir = "."
+
+    .. code-block::
+
+        update_config_content(
+            content=content,
+            data={"worldserver": {"DataDir": "/home/azeroth-server/data"}},
+        )
     """
     config = read_config_content(content)
     _update_config(config, data)
@@ -78,6 +99,8 @@ def update_config_file(
     """
     Given a config file path, load the config object from it,
     apply changes, and return the config object.
+
+    It is the same as :func:`update_config_content`` but with a file path.
     """
     return update_config_content(Path(path).read_text(), data)
 
@@ -110,6 +133,19 @@ def apply_changes(
     """
     Given a config file path, load the config object from it,
     apply changes, and write to the target file, then return the target file path.
+
+    :param path_input: the path of the input ``*.conf`` file. Can be str,
+        or pathlib.Path, or pathlib_mate.Path.
+    :param path_output: the path of the output ``*.conf`` file. Can be str,
+        or pathlib.Path, or pathlib_mate.Path. **Note that the output file
+        will be overwritten**.
+    :param data: python dictionary, the key value pair of the changes.
+        The first key is the section name, the second key is the field name,
+        and the value is the value.
+
+    :return: the path of the output file.
+
+    See :func:`update_config_content` for more details about the update behavior.
     """
     config = update_config_file(path_input, data)
     return write_config_file(config, path_output)
